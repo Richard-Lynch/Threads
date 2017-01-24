@@ -4,6 +4,7 @@
     "version": "0.1.0",
     "command": "gcc",
     "isShellCommand": true,
-    "args": ["-o", "main", "main.c", "-pthread"],
+    "args": ["-o", "main", "main.c"],
+    // "args": ["-o", "main", "main.c", "-pthread"],
     "showOutput": "always"
 }

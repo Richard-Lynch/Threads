@@ -24,22 +24,23 @@ void *PrintHello(void *threadid){
 
 int main(int argc, const char* argv[]){
 
+    printf("hello\n");
     pthread_t threads[NUM_THREADS];
     int rc, t;
 
     for(t=0; t<NUM_THREADS; t++){
-        prinft("Creating thread %d.\n", t);
+        printf("Creating thread %d.\n", t);
 
         rc = pthread_create(&threads[t], NULL, PrintHello, (void*)t);
         
         if(rc){
-            prinf("ERROR - return code from pthread_create: %d\n", rc);
+            printf("ERROR - return code from pthread_create: %d\n", rc);
             exit(-1);
         }
     }
 
     for(t=0; t<NUM_THREADS; t++){
-        prinft("Joining thread %d.\n", t);
+        printf("Joining thread %d.\n", t);
 
         pthread_join(&threads[t], NULL);
     }
